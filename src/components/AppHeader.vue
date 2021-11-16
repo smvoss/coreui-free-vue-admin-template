@@ -73,18 +73,22 @@ export default {
         { to: '/', name: 'Home'}
       ]
       let path = nav_to ? nav_to.path : router.currentRoute._value.path
+      console.log("nav_to: " + path)
       let temp = path.split('/')
       let to = ''
       if (temp.length <= 2) {
-        result.push({ to: '', name: upperCaseFirstChar(temp.at(-1)) })
+        result.push({ to: '', name: decodeURI(upperCaseFirstChar(temp.at(-1))) })
       } else {
         for (let i = 1; i < temp.length - 1; i++) {
+          to = ''
           for (let j = 1; j <= i; j++) {
+            console.log("temp: " + temp[j])
             to += `/${temp[j]}`
           }
-          result.push({ to: to, name: upperCaseFirstChar(temp[i]) })
+          result.push({ to: to, name: decodeURI(upperCaseFirstChar(temp[i])) })
         }
-        result.push({ to: '', name: upperCaseFirstChar(temp.at(-1)) })
+        result.push({ to: '', name: decodeURI(upperCaseFirstChar(temp.at(-1))) })
+        console.log("full temp: " + to)
       }
       return result
     }

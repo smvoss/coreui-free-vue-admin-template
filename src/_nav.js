@@ -1,14 +1,4 @@
 export default [
-  // {
-  //   component: 'CNavItem',
-  //   name: 'New Report',
-  //   to: '/start-report',
-  //   icon: 'cil-speedometer',
-  //   badge: {
-  //     color: 'primary',
-  //     text: 'NEW',
-  //   },
-  // },
   {
     component: 'CNavTitle',
     name: 'Theme',
@@ -28,6 +18,12 @@ export default [
   {
     component: 'CNavTitle',
     name: 'My Examples',
+  },
+  {
+    component: 'CNavItem',
+    name: 'Reports',
+    to: '/reports',
+    icon: 'cil-graph'
   },
   {
     component: 'CNavItem',
